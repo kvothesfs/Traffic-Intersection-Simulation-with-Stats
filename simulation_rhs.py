@@ -78,7 +78,7 @@ directionNumbers = {0:'right', 1:'down', 2:'left', 3:'up'}
 # Coordinates of signal image, timer, and vehicle count
 signalCoods = [(810,230),
                (530,230),
-               (830,570),
+               (530,570),
                (810,570)]
 signalTimerCoods = [(810,210),
                     (530,210),
@@ -105,10 +105,10 @@ allowedVehicleTypesList = []
 vehiclesTurned = {'right': {1:[], 2:[]}, 'down': {1:[], 2:[]}, 'left': {1:[], 2:[]}, 'up': {1:[], 2:[]}}
 vehiclesNotTurned = {'right': {1:[], 2:[]}, 'down': {1:[], 2:[]}, 'left': {1:[], 2:[]}, 'up': {1:[], 2:[]}}
 rotationAngle = 3
-mid = {'right': {'x':705, 'y':445}, 
-       'down': {'x':695, 'y':450}, 
-       'left': {'x':695, 'y':425}, 
-       'up': {'x':695, 'y':400}}
+mid = {'left': {'x':705, 'y':445}, 
+       'up': {'x':695, 'y':450}, 
+       'right': {'x':695, 'y':425}, 
+       'down': {'x':695, 'y':400}}
 # set random or default green signal time here 
 randomGreenSignalTimer = config["random_green"]
 # set random green signal time range here 
