@@ -46,7 +46,7 @@ def call_cv2(screen,fr=60,file_num=None,show=False):
 
 ##################End
 #printing control
-verbose=False
+verbose=config["verbose"]
 
 # Default values of signal timers
 defaultGreen = {0:config["green1_time"], 1:config["green2_time"], 2:config["green3_time"], 3:config["green4_time"]}
@@ -59,7 +59,7 @@ currentGreen = 0   # Indicates which signal is green currently
 nextGreen = (currentGreen+1)%noOfSignals    # Indicates which signal will turn green next
 currentYellow = 0   # Indicates whether yellow signal is on or off 
 
-speeds = {'car':2.25, 'bus':1.8, 'truck':1.8, 'bike':2.5}  # average speeds of vehicles
+speeds = {'car':config["car_speed"], 'bus':config["bus_speed"], 'truck':config["truck_speed"], 'bike':config["bike_speed"]}  # average speeds of vehicles
 
 # Coordinates of vehicles' start
 x = {'right':[0,0,0], 'down':[755,727,697], 'left':[1400,1400,1400], 'up':[602,627,657]}    
@@ -89,7 +89,7 @@ vehiclesNotTurned = {'right': {1:[], 2:[]}, 'down': {1:[], 2:[]}, 'left': {1:[],
 rotationAngle = 3
 mid = {'right': {'x':705, 'y':445}, 'down': {'x':695, 'y':450}, 'left': {'x':695, 'y':425}, 'up': {'x':695, 'y':400}}
 # set random or default green signal time here 
-randomGreenSignalTimer = True
+randomGreenSignalTimer = config["random_green"]
 # set random green signal time range here 
 randomGreenSignalTimerRange = [10,20]
 
