@@ -46,7 +46,7 @@ def call_cv2(screen,fr=60,file_num=None,show=False):
 ##################End
 
 # Default values of signal timers
-defaultGreen = {0:config["green1_time"], 1:config["green2_time", 2:config["green3_time", 3:config["green4_time"}
+defaultGreen = {0:config["green1_time"], 1:config["green2_time", 2:config["green3_time", 3:config["green4_time"]}
 defaultRed = config["red_time"]
 defaultYellow = config["yellow_time"]
 
