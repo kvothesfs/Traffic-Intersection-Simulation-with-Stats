@@ -5,6 +5,41 @@ import pygame
 import sys
 import os
 
+##################Added for google colab display
+import cv2
+import cv2
+from google.colab.patches import cv2_imshow
+from google.colab import output
+import os
+import shutil
+
+try:
+  shutil.rmtree('Snaps')
+except OSError:
+  pass
+
+try:
+    os.makedirs("Snaps")
+except OSError:
+    pass
+file_num = 0
+
+def call_cv2(screen,fr=60,file_num=None,show=False):
+  view = pygame.surfarray.array3d(screen)
+  #  convert from (width, height, channel) to (height, width, channel)
+  view = view.transpose([1, 0, 2])
+  #  convert from rgb to bgr
+  img_bgr = cv2.cvtColor(view, cv2.COLOR_RGB2BGR)
+  #Display image, clear cell every 1/fr SECONDS
+  if show:
+    output.clear(wait=True)  
+    cv2_imshow(img_bgr)
+  if file_num:
+    filename = "Snaps/%04d.png" % file_num
+    cv2.imwrite(filename, img_bgr)
+
+##################End
+
 # Default values of signal timers
 defaultGreen = {0:10, 1:10, 2:10, 3:10}
 defaultRed = 150
@@ -530,6 +565,7 @@ class Main:
             screen.blit(vehicle.image, [vehicle.x, vehicle.y])
             vehicle.move()
         pygame.display.update()
-
-
+        call_cv2(screen,file_num=file_num)
+        file_num+=1
+        
 Main()
