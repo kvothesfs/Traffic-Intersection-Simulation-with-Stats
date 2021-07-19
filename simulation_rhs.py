@@ -105,9 +105,9 @@ allowedVehicleTypesList = []
 vehiclesTurned = {'right': {1:[], 2:[]}, 'down': {1:[], 2:[]}, 'left': {1:[], 2:[]}, 'up': {1:[], 2:[]}}
 vehiclesNotTurned = {'right': {1:[], 2:[]}, 'down': {1:[], 2:[]}, 'left': {1:[], 2:[]}, 'up': {1:[], 2:[]}}
 rotationAngle = 3
-mid = {'left': {'x':705, 'y':445}, 
+mid = {'left': {'x':705, 'y':425}, 
        'up': {'x':695, 'y':450}, 
-       'right': {'x':695, 'y':425}, 
+       'right': {'x':695, 'y':445}, 
        'down': {'x':695, 'y':400}}
 # set random or default green signal time here 
 randomGreenSignalTimer = config["random_green"]
