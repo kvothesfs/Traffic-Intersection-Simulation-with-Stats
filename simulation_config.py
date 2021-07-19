@@ -45,6 +45,8 @@ def call_cv2(screen,fr=60,file_num=None,show=False):
     cv2.imwrite(filename, img_bgr)
 
 ##################End
+#printing control
+verbose=False
 
 # Default values of signal timers
 defaultGreen = {0:config["green1_time"], 1:config["green2_time"], 2:config["green3_time"], 3:config["green4_time"]}
@@ -390,16 +392,17 @@ def initialize():
 
 # Print the signal timers on cmd
 def printStatus():
-    for i in range(0, 4):
-        if(signals[i] != None):
-            if(i==currentGreen):
-                if(currentYellow==0):
-                    print(" GREEN TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
-                else:
-                    print("YELLOW TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
-            else:
-                print("   RED TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
-    print()  
+    if verbose:
+      for i in range(0, 4):
+          if(signals[i] != None):
+              if(i==currentGreen):
+                  if(currentYellow==0):
+                      print(" GREEN TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+                  else:
+                      print("YELLOW TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+              else:
+                  print("   RED TS",i+1,"-> r:",signals[i].red," y:",signals[i].yellow," g:",signals[i].green)
+      print()  
 
 def repeat():
     global currentGreen, currentYellow, nextGreen
