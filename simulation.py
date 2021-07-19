@@ -6,6 +6,7 @@ import sys
 import os
 
 ##################Added for google colab display
+img_folder = "/content/Basic-Traffic-Intersection-Simulation/images"
 import cv2
 import cv2
 from google.colab.patches import cv2_imshow
@@ -118,7 +119,7 @@ class Vehicle(pygame.sprite.Sprite):
         vehicles[direction][lane].append(self)
         self.index = len(vehicles[direction][lane]) - 1
         self.crossedIndex = 0
-        path = "images/" + direction + "/" + vehicleClass + ".png"
+        path = image_folder+"/" + direction + "/" + vehicleClass + ".png"
         self.originalImage = pygame.image.load(path)
         self.image = pygame.image.load(path)
 
@@ -504,15 +505,15 @@ class Main:
     screenSize = (screenWidth, screenHeight)
 
     # Setting background image i.e. image of intersection
-    background = pygame.image.load('images/intersection.png')
+    background = pygame.image.load(image_folder+'/intersection.png')
 
     screen = pygame.display.set_mode(screenSize)
     pygame.display.set_caption("SIMULATION")
 
     # Loading signal images and font
-    redSignal = pygame.image.load('images/signals/red.png')
-    yellowSignal = pygame.image.load('images/signals/yellow.png')
-    greenSignal = pygame.image.load('images/signals/green.png')
+    redSignal = pygame.image.load(image_folder+'/signals/red.png')
+    yellowSignal = pygame.image.load(image_folder+'/signals/yellow.png')
+    greenSignal = pygame.image.load(image_folder+'/signals/green.png')
     font = pygame.font.Font(None, 30)
     thread2 = threading.Thread(name="generateVehicles",target=generateVehicles, args=())    # Generating vehicles
     thread2.daemon = True
