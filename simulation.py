@@ -6,7 +6,7 @@ import sys
 import os
 
 ##################Added for google colab display
-image_folder = "/content/Basic-Traffic-Intersection-Simulation/images"
+image_folder = "/content/Traffic-Intersection-Simulation-with-Stats/images"
 import cv2
 import cv2
 from google.colab.patches import cv2_imshow
