@@ -5,6 +5,7 @@ import pygame
 import sys
 import os
 #read config_dict
+import ast
 file = open("config.txt", "r")
 contents = file.read()
 config = ast.literal_eval(contents)
